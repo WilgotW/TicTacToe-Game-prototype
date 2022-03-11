@@ -25,7 +25,7 @@ function turnSwitch(){
 function changeButtonType(clicked_id, row){
     boardIndex = clicked_id - (row * 3);
     console.log(board);
-    if(document.getElementById(clicked_id).innerHTML != "-"){
+    if(document.getElementById(clicked_id).innerHTML != "-" || gameOver){
         return;
     }
 
@@ -163,6 +163,7 @@ function resetGame(){
     }
     
     console.log(board);
+    gameOver = false;
     whosTurn = "Circle";
     document.getElementById("whoTurn").innerHTML = "Circle's Turn";
     turnCount = 0;
